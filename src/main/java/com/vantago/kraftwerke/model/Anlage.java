@@ -47,7 +47,7 @@ public class Anlage extends BaseEntity {
      * Betriebsdauer (wie lange ist die Anlage in Betrieb gewesen in Stunden)
      */
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    private LocalDate Betriebsdauer;
+    private LocalDate betriebsdauer;
 
     @ManyToOne
     @JoinColumn(name = "kraftwerk_id", nullable = false)
