@@ -1,7 +1,6 @@
 package com.vantago.kraftwerke.model;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
@@ -10,14 +9,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Entity
 @Data
 public class Anlage extends BaseEntity {
 
     /**
      * Bild der Anlage
-     * FIXME si. https://vaadin.com/blog/saving-and-displaying-images-using-jpa
+     * TODO  si. https://vaadin.com/blog/saving-and-displaying-images-using-jpa
      */
     private byte[] bild;
 
@@ -64,9 +63,9 @@ public class Anlage extends BaseEntity {
         if (!(o instanceof Anlage)) return false;
         if (!super.equals(o)) return false;
 
-        Anlage anlage = (Anlage) o;
+        Anlage object = (Anlage) o;
 
-        return id.equals(anlage.id);
+        return id.equals(object.id);
     }
 
     @Override

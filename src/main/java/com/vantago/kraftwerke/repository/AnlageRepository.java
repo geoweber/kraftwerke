@@ -10,9 +10,6 @@ public interface AnlageRepository extends JpaRepository<Anlage, Long> {
 
     Anlage findByName(String name);
 
-    @Override
-    List<Anlage> findAll();
-
     List<Anlage> findByKraftwerk(Kraftwerk kraftwerk);
 }
 

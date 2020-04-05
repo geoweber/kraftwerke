@@ -34,7 +34,7 @@ public class AnlageController {
     }
 
     /**
-     * detailed view for selected cart
+     * detailed view for selected Anlage
      *
      * @param id    - id of cart
      * @param model -a holder for model attributes.

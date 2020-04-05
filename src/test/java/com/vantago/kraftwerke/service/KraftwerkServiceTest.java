@@ -31,7 +31,7 @@ class KraftwerkServiceTest {
 
     @Test
     void findById() {
-        Kraftwerk object = service.findById(1L).get();
+        Kraftwerk object = service.findById(1L).orElseThrow();
         assertEquals("Kraftwerk 1", object.getName());
         assertEquals(2, object.getAnlagen().size());
     }

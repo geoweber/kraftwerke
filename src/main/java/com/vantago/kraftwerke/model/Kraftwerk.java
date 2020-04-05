@@ -1,7 +1,6 @@
 package com.vantago.kraftwerke.model;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,7 +12,6 @@ import java.util.Set;
 /**
  * Kennung zu welchem virtuellen Kraftwerk die Erzeugungsanlage gehört (ID des virtuellen Kraftwerks)
  */
-@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
 public class Kraftwerk extends BaseEntity {
@@ -30,9 +28,9 @@ public class Kraftwerk extends BaseEntity {
         if (!(o instanceof Kraftwerk)) return false;
         if (!super.equals(o)) return false;
 
-        Kraftwerk kraftwerk = (Kraftwerk) o;
+        Kraftwerk object = (Kraftwerk) o;
 
-        return id.equals(kraftwerk.id);
+        return id.equals(object.id);
     }
 
     @Override
