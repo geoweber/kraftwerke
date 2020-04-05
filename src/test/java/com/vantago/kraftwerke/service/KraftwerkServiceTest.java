@@ -1,5 +1,6 @@
 package com.vantago.kraftwerke.service;
 
+import com.vantago.kraftwerke.model.Kraftwerk;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -9,10 +10,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class AnlagetypeServiceTest {
+class KraftwerkServiceTest {
+
 
     @Autowired
-    private AnlagetypeService service;
+    private KraftwerkService service;
 
     @BeforeEach
     void setUp() {
@@ -24,16 +26,24 @@ class AnlagetypeServiceTest {
 
     @Test
     void findAll() {
-        assertEquals(3, service.findAll().size());
+        assertEquals(5, service.findAll().size());
     }
 
     @Test
     void findById() {
-        assertEquals("Windrad", service.findById(1L).get().getName());
+        Kraftwerk object = service.findById(1L).get();
+        assertEquals("Kraftwerk 1", object.getName());
+        assertEquals(2, object.getAnlagen().size());
     }
 
     @Test
     void findByName() {
-        assertEquals("Windrad", service.findByName("Windrad").getName());
+        assertEquals("Kraftwerk 1", service.findByName("Kraftwerk 1").getName());
+    }
+
+
+    @Test
+    void getGesamtleistung() {
+        assertEquals(service.getGesamtleistungById(1L), 400000);
     }
 }

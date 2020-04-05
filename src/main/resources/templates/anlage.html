@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Analge reporting</title>
+    <style>
+        td {
+            width: 150px;
+            text-align: left;
+        }
+        td.header {
+            font-style: bold;
+            width: 150px;
+            text-align: left;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<h1>Anlagen:</h1>
+<h2>ausgewählte Analage:</h2>
+<br/><br/>
+
+
+<table border="0">
+    <tr>
+        <td class="header">Id:</td>
+        <td th:utext="${anlage.id}">...</b></td>
+    </tr>
+    <tr>
+        <td class="header">Name</td>
+        <td th:utext="${anlage.name}">...</td>
+    </tr>
+    <tr>
+        <td class="header">Anlagetype</td>
+        <td th:utext="${anlage.anlagetype.name}">...</td>
+    </tr>
+    <tr>
+        <td class="header">Einsatzort</td>
+        <td th:utext="${anlage.einsatzort.name}">...</td>
+    </tr>
+    <tr>
+        <td class="header">Hersteller</td>
+        <td th:utext="${anlage.hersteller.name}">...</td>
+    </tr>
+    <tr>
+        <td class="header">Anschaffungsdatum</td>
+        <td>
+            <b th:utext="${anlage.anschaffungsdatum} ? ${#temporals.format(anlage.anschaffungsdatum, 'dd-MM-yyyy')}">...</b>
+        </td>
+    </tr>
+    <tr>
+        <td class="header">im Betrieb seit</td>
+        <td><b th:utext="${anlage.betriebsdauer} ? ${#temporals.format(anlage.betriebsdauer, 'dd-MM-yyyy')}">...</b>
+        </td>
+    </tr>
+    <tr>
+        <td class="header">Leistung <br/>(Angabe in kW)</td>
+        <td th:utext="${#numbers.formatDecimal(anlage.leistung, 0, 'COMMA', 0, 'POINT')}">...</td>
+    </tr>
+    <tr>
+        <td class="header">Kaufpreis <br/> (in Tausend €)</td>
+        <td th:utext="${#numbers.formatDecimal(anlage.kaufpreis, 0, 'COMMA', 0, 'POINT')}">...</td>
+    </tr>
+    <tr>
+        <td class="header"> Bild der Anlage</td>
+        <td></td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+<a href="/anlage">zurück</a>
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Reporting</title>
+    <style>
+        tr {
+            height: 30px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Virtuelle Kraftwerke und ihre Erzeugungsanlagen:</h1>
+
+<table>
+
+    <tr>
+        <td>
+            <a th:href="${'/kraftwerk/'}"> <b>Kraftwerke:</b></a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a th:href="${'/anlage/'}"> <b>Anlagen:</b></a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <a th:href="${'/anlagetype/'}"> <b>Anlagentypen:</b></a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <a th:href="${'/einsatzort/'}"> <b>Einsatzorte:</b></a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <a th:href="${'/hersteller/'}"> <b>Hersteller:</b></a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

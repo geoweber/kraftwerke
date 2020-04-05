@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Analge reporting</title>
+    <style>
+        td {
+            width: 150px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Anlage reporting</h1>
+<h2 th:utext="${title}"></h2>
+
+<br/><br/>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="anlage : ${anlagen}">
+        <td>
+            <a th:href="${'/anlage/' +anlage.id}"><b th:text="${anlage.id}">...</b></a>
+        </td>
+        <td>
+            <a th:href="${'/anlage/' +anlage.id}"> <b th:text="${anlage.name}">...</b></a>
+        </td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+<a href="/">zurück</a>
+
+</body>
+</html>

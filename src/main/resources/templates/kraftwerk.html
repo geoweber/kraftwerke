@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Kraftwerk reporting</title>
+    <style>
+        td {
+            width: 150px;
+            text-align: center;
+        }
+        td.header {
+            width: 150px;
+            text-align: left;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h1>Kraftwerke:</h1>
+<h2>ausgewählter Kraftwerk:</h2>
+
+<table border="0">
+    <tr>
+        <td class="header">Id:</td>
+        <td class="header"><b th:utext="${kraftwerk.id}">...</b></td>
+    </tr>
+    <tr>
+        <td class="header">Name:</td>
+        <td class="header"><b th:utext="${kraftwerk.name}">...</b></td>
+    </tr>
+
+    <tr>
+        <td class="header">Gesamtleistung:</td>
+        <td class="header" th:utext="${#numbers.formatDecimal(kraftwerk.gesamtleistung, 0, 'COMMA', 0, 'POINT')}">...
+        </td>
+    </tr>
+</table>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Anlagetype</th>
+        <th>Einsatzort</th>
+        <th>Hersteller</th>
+        <th>Anschaffungsdatum</th>
+        <th>im Betrieb seit</th>
+        <th>Leistung <br/>(Angabe in kW)</th>
+        <th>Kaufpreis <br/> (in Tausend €)</th>
+        <th> Bild der Anlage</th>
+    </tr>
+    <tr th:each="item : ${kraftwerk.anlagen}">
+        <td th:utext="${item.id}">...</td>
+        <td th:utext="${item.name}">...</td>
+        <td th:utext="${item.anlagetype.name}">...</td>
+        <td th:utext="${item.einsatzort.name}">...</td>
+        <td th:utext="${item.hersteller.name}">...</td>
+
+        <td><b th:utext="${item.anschaffungsdatum} ? ${#temporals.format(item.anschaffungsdatum, 'dd-MM-yyyy')}">...</b>
+        </td>
+        <td><b th:utext="${item.betriebsdauer} ? ${#temporals.format(item.betriebsdauer, 'dd-MM-yyyy')}">...</b>
+        </td>
+
+        <td style="text-align: right" th:utext="${#numbers.formatDecimal(item.leistung, 0, 'COMMA', 0, 'POINT')}">...
+        </td>
+        <td style="text-align: right" th:utext="${#numbers.formatDecimal(item.kaufpreis, 0, 'COMMA', 0, 'POINT')}">...
+        </td>
+        <td></td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+<a href="/kraftwerk">zurück</a>
+
+
+</body>
+</html>

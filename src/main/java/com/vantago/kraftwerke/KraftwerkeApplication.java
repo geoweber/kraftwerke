@@ -1,7 +1,6 @@
 package com.vantago.kraftwerke;
 
 
-import com.vantago.kraftwerke.controllers.KraftwerkController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,10 +12,10 @@ public class KraftwerkeApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext ctx = SpringApplication.run(KraftwerkeApplication.class, args);
-		KraftwerkController kraftwerkController = (KraftwerkController) ctx.getBean("kraftwerkController");
+        ApplicationContext ctx = SpringApplication.run(KraftwerkeApplication.class, args);
+        //KraftwerkController kraftwerkController = (KraftwerkController) ctx.getBean("kraftwerkController");
 
-		System.out.println(kraftwerkController.sayHello());
-	}
+        //System.out.println(kraftwerkController.findAll());
+    }
 
 }

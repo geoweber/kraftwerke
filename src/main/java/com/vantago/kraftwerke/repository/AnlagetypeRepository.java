@@ -4,4 +4,6 @@ import com.vantago.kraftwerke.model.Anlagetype;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AnlagetypeRepository extends JpaRepository<Anlagetype, Long> {
+
+    Anlagetype findByName(String name);
 }

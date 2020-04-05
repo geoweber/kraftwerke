@@ -1,13 +1,18 @@
 package com.vantago.kraftwerke.model;
 
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Data
 public class Anlage extends BaseEntity {
 
     /**
@@ -49,7 +54,25 @@ public class Anlage extends BaseEntity {
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     private LocalDate betriebsdauer;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "kraftwerk_id", nullable = false)
     private Kraftwerk kraftwerk;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Anlage)) return false;
+        if (!super.equals(o)) return false;
+
+        Anlage anlage = (Anlage) o;
+
+        return id.equals(anlage.id);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 31 * result + id.hashCode();
+        return result;
+    }
 }

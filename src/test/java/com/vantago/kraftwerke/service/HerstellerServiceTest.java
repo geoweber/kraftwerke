@@ -9,10 +9,11 @@ import org.springframework.boot.test.context.SpringBootTest;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class AnlagetypeServiceTest {
+class HerstellerServiceTest {
+
 
     @Autowired
-    private AnlagetypeService service;
+    private HerstellerService service;
 
     @BeforeEach
     void setUp() {
@@ -24,16 +25,16 @@ class AnlagetypeServiceTest {
 
     @Test
     void findAll() {
-        assertEquals(3, service.findAll().size());
+        assertEquals(4, service.findAll().size());
     }
 
     @Test
     void findById() {
-        assertEquals("Windrad", service.findById(1L).get().getName());
+        assertEquals("Hersteller 1", service.findById(1L).getName());
     }
 
     @Test
     void findByName() {
-        assertEquals("Windrad", service.findByName("Windrad").getName());
+        assertEquals("Hersteller 1", service.findByName("Hersteller 1").getName());
     }
 }

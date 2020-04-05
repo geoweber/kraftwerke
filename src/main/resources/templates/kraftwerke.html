@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Kraftwerke reporting</title>
+    <style>
+        td {
+            width: 150px;
+            text-align: center;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<h1>Kraftwerke:</h1>
+<h2 th:utext="${title}"></h2>
+
+<br/><br/>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="kraftwerk : ${kraftwerke}">
+        <td>
+            <a th:href="${'/kraftwerk/' +kraftwerk.id}"><b th:text="${kraftwerk.id}">...</b></a>
+        </td>
+        <td>
+            <a th:href="${'/kraftwerk/' +kraftwerk.id}"> <b th:text="${kraftwerk.name}">...</b></a>
+        </td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+<a href="/">zurück</a>
+
+</body>
+</html>

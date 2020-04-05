@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Herstellers reporting</title>
+    <style>
+        td {
+            width: 150px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Herstellers reporting</h1>
+<h2 th:utext="${title}"></h2>
+
+<br/><br/>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+    </tr>
+    <tr th:each="hersteller : ${herstellers}">
+        <td>
+            <b th:text="${hersteller.id}">...</b>
+        </td>
+        <td>
+            <b th:text="${hersteller.name}">...</b>
+        </td>
+    </tr>
+</table>
+
+<br/>
+<br/>
+<a href="/">zurück</a>
+
+</body>
+</html>
