@@ -32,9 +32,11 @@ Implementieren Sie auch eine Methode zur Ermittlung der Gesamtleistung aller Anl
 
 1)         Projekt Aufbau und Struktur - Maven Projekt.
 2)         Design Pattern  - REST Controllers/Services, MVC.
+3)         String-Boot Projekt
+4)         Thymeleaf template engine   
 3)         Database configuration   - To avoid any extra setup, i will use the H2 embedded database. 
 4)         JUnit Test und Integrationstest
-5)         Deployment instructions  - eine Docker File wurde definiert. Jenkind bzw. GitLab CI Konfiguration fehlen
+5)         Deployment instructions  - eine Docker File wurde definiert. Jenkins bzw. GitLab CI Konfiguration fehlen
 
 
 
