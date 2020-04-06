@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.vantago</groupId>
 	<artifactId>kraftwerke</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Kraftwerke</name>
 	<description>eine einfache, datenbankbasierte JAVA-Applikation mit angemessener Benutzerschnittstelle zur Verwaltung
 		von virtuellen Kraftwerken und deren Erzeugungsanlagen.
