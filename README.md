@@ -48,6 +48,6 @@ Implementieren Sie auch eine Methode zur Ermittlung der Gesamtleistung aller Anl
  * spring-boot-starter-web,
  * spring-boot-starter-test,
  * springfox-swagger2,
- *springfox-swagger-ui,
- *lombok
- *com.h2database.h2
+ * springfox-swagger-ui,
+ * lombok
+ * com.h2database.h2
