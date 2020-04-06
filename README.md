@@ -41,11 +41,11 @@ Implementieren Sie auch eine Methode zur Ermittlung der Gesamtleistung aller Anl
 ### Summary of set up
 * Configuration - Port 8080
 * Dependencies:
- ** spring-boot-starter-data-jpa,
- ** spring-boot-starter-thymeleaf,
- ** spring-boot-starter-web,
- ** spring-boot-starter-test,
- ** springfox-swagger2,
- ** pringfox-swagger-ui,
- ** lombok
- ** com.h2database.h2
+  * spring-boot-starter-data-jpa,
+  * spring-boot-starter-thymeleaf,
+  * spring-boot-starter-web,
+  * spring-boot-starter-test,
+  * springfox-swagger2,
+  * pringfox-swagger-ui,
+  * lombok
+  * com.h2database.h2
